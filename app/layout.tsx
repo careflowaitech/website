@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     url: "https://apexcare360.com",
     siteName: "ApexCare360",
   },
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
