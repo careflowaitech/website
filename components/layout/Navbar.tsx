@@ -98,25 +98,25 @@ export function Navbar() {
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link href="/#why-choose" legacyBehavior passHref>
-                                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-600 hover:text-primary focus:bg-transparent hover:bg-transparent")}>
+                                    <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-600 hover:text-primary focus:bg-transparent hover:bg-transparent")}>
+                                        <Link href="/#why-choose">
                                             Why Us
-                                        </NavigationMenuLink>
-                                    </Link>
+                                        </Link>
+                                    </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link href="/founder" legacyBehavior passHref>
-                                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-600 hover:text-primary focus:bg-transparent hover:bg-transparent")}>
+                                    <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-600 hover:text-primary focus:bg-transparent hover:bg-transparent")}>
+                                        <Link href="/founder">
                                             Founder
-                                        </NavigationMenuLink>
-                                    </Link>
+                                        </Link>
+                                    </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link href="/#contact" legacyBehavior passHref>
-                                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-600 hover:text-primary focus:bg-transparent hover:bg-transparent")}>
+                                    <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-600 hover:text-primary focus:bg-transparent hover:bg-transparent")}>
+                                        <Link href="/#contact">
                                             Contact
-                                        </NavigationMenuLink>
-                                    </Link>
+                                        </Link>
+                                    </NavigationMenuLink>
                                 </NavigationMenuItem>
                             </NavigationMenuList>
                         </NavigationMenu>
@@ -227,7 +227,7 @@ export function Navbar() {
                 </div>
             </div>
         </header>
-    )
+    );
 }
 
 const ListItem = React.forwardRef<
