@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { ArrowRight, Activity, Heart, Shield, Calendar, Users, TrendingUp } from "lucide-react"
+import { HeroSlideshow } from "./HeroSlideshow"
 
 export function Hero() {
     return (
@@ -92,83 +93,9 @@ export function Hero() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
-                        className="relative h-[500px] w-full hidden lg:block"
+                        className="relative h-auto w-full lg:h-[500px]"
                     >
-                        {/* Main Dashboard Card */}
-                        <div className="absolute top-10 left-10 right-0 bottom-10 bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 z-10 overflow-hidden">
-                            <div className="flex items-center justify-between mb-8">
-                                <div>
-                                    <div className="text-sm text-slate-400 uppercase font-semibold tracking-wider">Health Overview</div>
-                                    <div className="text-2xl font-bold text-slate-900">Corporate Wellness Index</div>
-                                </div>
-                                <div className="p-2 bg-green-50 rounded-lg text-green-600 font-bold flex items-center gap-1">
-                                    <TrendingUp className="h-4 w-4" /> +12%
-                                </div>
-                            </div>
-
-                            {/* Mock Chart Area */}
-                            <div className="w-full h-48 bg-gradient-to-b from-primary/5 to-transparent rounded-xl border border-primary/10 relative overflow-hidden mb-6 flex items-end justify-between px-4 pb-0">
-                                {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-                                    <div key={i} className="w-8 bg-primary/20 rounded-t-lg hover:bg-primary/40 transition-colors" style={{ height: `${h}%` }} />
-                                ))}
-                            </div>
-
-                            <div className="grid grid-cols-3 gap-4">
-                                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                                    <div className="text-slate-500 text-xs mb-1">Active Employees</div>
-                                    <div className="text-xl font-bold text-slate-900">1,240</div>
-                                </div>
-                                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                                    <div className="text-slate-500 text-xs mb-1">Health Score</div>
-                                    <div className="text-xl font-bold text-slate-900">8.4/10</div>
-                                </div>
-                                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                                    <div className="text-slate-500 text-xs mb-1">Camps Conducted</div>
-                                    <div className="text-xl font-bold text-slate-900">24</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Floating Elements */}
-                        <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                            className="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-xl border border-slate-100 z-20 w-48"
-                        >
-                            <div className="flex items-center gap-3 mb-2">
-                                <div className="bg-red-50 p-2 rounded-lg"><Heart className="h-5 w-5 text-red-500" /></div>
-                                <div className="font-bold text-slate-900">Vitals Check</div>
-                            </div>
-                            <div className="text-xs text-slate-500">Scheduled for Today</div>
-                            <div className="mt-2 h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                                <div className="h-full bg-red-500 w-[70%]" />
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            animate={{ y: [0, 10, 0] }}
-                            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                            className="absolute bottom-20 -left-8 bg-white p-4 rounded-xl shadow-xl border border-slate-100 z-20 w-52"
-                        >
-                            <div className="flex items-center gap-3 mb-3">
-                                <div className="bg-blue-50 p-2 rounded-lg"><Calendar className="h-5 w-5 text-blue-500" /></div>
-                                <div>
-                                    <div className="font-bold text-slate-900 text-sm">Upcoming Camp</div>
-                                    <div className="text-xs text-slate-500">12th Oct, 10:00 AM</div>
-                                </div>
-                            </div>
-                            <div className="flex -space-x-2">
-                                {[1, 2, 3].map(i => (
-                                    <div key={i} className="h-8 w-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] text-slate-600 font-bold">
-                                        U{i}
-                                    </div>
-                                ))}
-                                <div className="h-8 w-8 rounded-full border-2 border-white bg-blue-500 flex items-center justify-center text-[10px] text-white font-bold">
-                                    +15
-                                </div>
-                            </div>
-                        </motion.div>
-
+                        <HeroSlideshow />
                     </motion.div>
                 </div>
             </div>

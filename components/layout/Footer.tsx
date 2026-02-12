@@ -84,9 +84,9 @@ export function Footer() {
                         <div className="flex items-start gap-3 text-sm text-muted-foreground">
                             <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
                             <address className="not-italic">
-                                Kamraj Nagar, Vikas Society Galli No 1<br />
-                                V.N Marg, Ghatkopar East<br />
-                                Mumbai - 400077, India
+                                KT3-711, Rising city<br />
+                                Ghatkopar East<br />
+                                Mumbai 400077
                             </address>
                         </div>
                         <div className="flex items-center gap-3 text-sm text-muted-foreground">

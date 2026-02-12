@@ -62,7 +62,7 @@ export function Navbar() {
             )}
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex h-14 items-center justify-between">
+                <div className="flex h-24 items-center justify-between">
 
                     {/* Logo */}
                     <div className="flex-shrink-0 mr-8">
@@ -70,9 +70,9 @@ export function Navbar() {
                             <img
                                 src="/logo.png"
                                 alt="ApexCare360 Logo"
-                                width={280}
-                                height={80}
-                                className="h-20 w-auto object-contain"
+                                width={320}
+                                height={90}
+                                className="h-28 w-auto object-contain"
                             />
                         </Link>
                     </div>
@@ -149,9 +149,9 @@ export function Navbar() {
                                             <img
                                                 src="/logo.png"
                                                 alt="ApexCare360 Logo"
-                                                width={200}
-                                                height={56}
-                                                className="h-14 w-auto object-contain"
+                                                width={240}
+                                                height={70}
+                                                className="h-20 w-auto object-contain"
                                             />
                                         </div>
                                         <SheetTitle className="sr-only">Mobile Menu</SheetTitle>

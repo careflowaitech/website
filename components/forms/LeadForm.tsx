@@ -228,6 +228,8 @@ export function LeadForm() {
                                                             <SelectItem value="annual-checkups">Annual Health Checkups</SelectItem>
                                                             <SelectItem value="wellness-programs">Wellness Programs</SelectItem>
                                                             <SelectItem value="diagnostics">Diagnostic Services</SelectItem>
+                                                            <SelectItem value="health-talks">Health Talks</SelectItem>
+                                                            <SelectItem value="preventive-screening">Preventive Health Screening</SelectItem>
                                                             <SelectItem value="other">Other</SelectItem>
                                                         </SelectContent>
                                                     </Select>

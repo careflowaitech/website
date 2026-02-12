@@ -31,14 +31,14 @@ export default function FounderPage() {
                                 </div>
                                 {<Image
                                     src="/founder.jpeg"
-                                    alt="Ashwin Verma"
+                                    alt="Ashwin Varma"
                                     fill
                                     className="object-cover"
                                 />}
                             </div>
                             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 max-w-xs hidden md:block">
                                 <p className="text-sm font-medium text-slate-600">"Healthcare is not just a service, it's a commitment to humanity."</p>
-                                <p className="text-xs text-primary font-bold mt-2">- Ashwin Verma</p>
+                                <p className="text-xs text-primary font-bold mt-2">- Ashwin Varma</p>
                             </div>
                         </motion.div>
 
@@ -50,13 +50,13 @@ export default function FounderPage() {
                             className="lg:w-1/2 space-y-8"
                         >
                             <div>
-                                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900 mb-2">Ashwin Verma</h1>
+                                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900 mb-2">Ashwin Varma</h1>
                                 <p className="text-xl text-primary font-medium">Founder & CEO, ApexCare360</p>
                             </div>
 
                             <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                                 <p>
-                                    With a visionary approach to corporate wellness, Ashwin Verma has redefined how organizations perceive employee health. His journey began with a simple yet profound realization: <span className="text-slate-900 font-semibold">a healthy workforce is the backbone of a thriving economy.</span>
+                                    With a visionary approach to corporate wellness, Ashwin Varma has redefined how organizations perceive employee health. His journey began with a simple yet profound realization: <span className="text-slate-900 font-semibold">a healthy workforce is the backbone of a thriving economy.</span>
                                 </p>
                                 <p>
                                     Under his leadership, ApexCare360 has grown from a fledgling idea into a trusted partner for over 500 corporates across India. Ashwin combines deep industry knowledge with a passion for operational excellence, ensuring that every health camp and diagnostic drive is executed with military precision.
