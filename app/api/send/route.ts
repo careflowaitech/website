@@ -43,9 +43,9 @@ export async function POST(req: NextRequest) {
           <p><strong>ApexCare360 Team</strong></p>
           <hr>
           <p style="font-size: 12px; color: #666;">
-            Kamraj Nagar, Vikas Society Galli No 1<br>
-            V.N Marg, Ghatkopar East<br>
-            Mumbai - 400077
+            KT3-711, Rising city<br>
+Ghatkopar East<br>
+Mumbai 400077
           </p>
         </div>
       `,
