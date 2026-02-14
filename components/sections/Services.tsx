@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
-import { Beaker, HeartPulse, Microscope, Ruler, Stethoscope, Syringe, Users, Zap } from "lucide-react"
+import { Activity, Beaker, HeartPulse, Microscope, Ruler, Stethoscope, Syringe, Users, Zap } from "lucide-react"
 
 const services = [
     {
@@ -52,6 +52,12 @@ const services = [
         description: "Holistic nutrition plans, yoga sessions, and mental health workshops.",
         icon: Zap, // Changed icon for variety
         color: "bg-orange-500",
+    },
+    {
+        title: "Fitness & Yoga",
+        description: "Energizing Zumba sessions and calming corporate Yoga workshops.",
+        icon: Activity,
+        color: "bg-yellow-500",
     },
 ]
 

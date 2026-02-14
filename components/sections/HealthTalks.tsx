@@ -2,12 +2,14 @@
 
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
-import { Brain, Heart, Stethoscope, Users, Utensils, Activity } from "lucide-react"
+import { Activity, Brain, Heart, Smile, Stethoscope, Trophy, Users, Utensils } from "lucide-react"
 
 const talks = [
     { title: "Cardiology & Heart Health", icon: Heart, color: "bg-red-100 text-red-700" },
     { title: "Preventive Oncology", icon: Activity, color: "bg-purple-100 text-purple-700" },
     { title: "Mental Health Awareness", icon: Brain, color: "bg-blue-100 text-blue-700" },
+    { title: "Work Stress Management", icon: Smile, color: "bg-teal-100 text-teal-700" },
+    { title: "Leadership & Well-being", icon: Trophy, color: "bg-yellow-100 text-yellow-700" },
     { title: "Nutrition & Diet", icon: Utensils, color: "bg-green-100 text-green-700" },
     { title: "Diabetes Management", icon: Stethoscope, color: "bg-orange-100 text-orange-700" },
     { title: "Women's Health", icon: Users, color: "bg-pink-100 text-pink-700" },

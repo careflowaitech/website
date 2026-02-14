@@ -229,6 +229,9 @@ export function LeadForm() {
                                                             <SelectItem value="wellness-programs">Wellness Programs</SelectItem>
                                                             <SelectItem value="diagnostics">Diagnostic Services</SelectItem>
                                                             <SelectItem value="health-talks">Health Talks</SelectItem>
+                                                            <SelectItem value="stress-management">How to Handle Stress at Work</SelectItem>
+                                                            <SelectItem value="leadership">Leadership & Well-being</SelectItem>
+                                                            <SelectItem value="fitness-yoga">Fitness & Yoga (Zumba/Yoga)</SelectItem>
                                                             <SelectItem value="preventive-screening">Preventive Health Screening</SelectItem>
                                                             <SelectItem value="other">Other</SelectItem>
                                                         </SelectContent>
