@@ -4,10 +4,11 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "luc
 
 const footerLinks = {
     services: [
-        { name: "Corporate Health Camps", href: "#services" },
-        { name: "Employee Wellness", href: "#solutions" },
-        { name: "Preventive Checkups", href: "#services" },
-        { name: "Health Talks", href: "#health-talks" },
+        { name: "Health Talks", href: "/services/health-talks" },
+        { name: "Diagnostic Services", href: "/services/diagnostics" },
+        { name: "Corporate Vaccination", href: "/services/vaccination" },
+        { name: "Blood Test Packages", href: "/services/packages" },
+        { name: "Consultation Services", href: "/consultations" },
     ],
     company: [
         { name: "About Us", href: "/#why-choose" },
@@ -15,6 +16,8 @@ const footerLinks = {
         { name: "Contact", href: "/#contact" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms of Service", href: "/terms-of-service" },
+        { name: "Corporate Benefits", href: "/corporate-benefits" },
+        { name: "Compliance", href: "/compliance" },
     ],
 }
 

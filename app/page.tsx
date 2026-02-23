@@ -5,7 +5,10 @@ import { HealthTalks } from "@/components/sections/HealthTalks";
 import { Solutions } from "@/components/sections/Solutions";
 import { Clients } from "@/components/sections/Clients";
 import { ProofOfWork } from "@/components/sections/ProofOfWork";
-import { LeadForm } from "@/components/forms/LeadForm";
+import { FounderHighlight } from "@/components/sections/FounderHighlight";
+import { Statistics } from "@/components/sections/Statistics";
+import { HospitalNetwork } from "@/components/sections/HospitalNetwork";
+import { AuditCTA } from "@/components/sections/AuditCTA";
 
 export default function Home() {
   return (
@@ -15,9 +18,16 @@ export default function Home() {
       <Services />
       <HealthTalks />
       <Solutions />
+      {/* <Diagnostics /> */}
+      {/* <Vaccination /> */}
+      {/* <Compliance /> */}
+      <FounderHighlight />
+      <Statistics />
+      <HospitalNetwork />
       <Clients />
       <ProofOfWork />
-      <LeadForm />
+      {/* <Blogs /> */}
+      <AuditCTA />
     </div>
   );
 }

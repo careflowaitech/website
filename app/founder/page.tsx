@@ -27,17 +27,17 @@ export default function FounderPage() {
                             <div className="relative aspect-[4/5] w-full max-w-md mx-auto overflow-hidden rounded-2xl shadow-2xl">
                                 {/* Placeholder for Founder Image - replace with actual image */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center text-slate-400">
-                                    <span className="text-lg">Ashwin Verma's Photo</span>
+                                    <span className="text-lg">Ashwin Verma&apos;s Photo</span>
                                 </div>
-                                {<Image
+                                <Image
                                     src="/founder.jpeg"
                                     alt="Ashwin Varma"
                                     fill
                                     className="object-cover"
-                                />}
+                                />
                             </div>
                             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 max-w-xs hidden md:block">
-                                <p className="text-sm font-medium text-slate-600">"Healthcare is not just a service, it's a commitment to humanity."</p>
+                                <p className="text-sm font-medium text-slate-600">&quot;Healthcare is not just a service, it&apos;s a commitment to humanity.&quot;</p>
                                 <p className="text-xs text-primary font-bold mt-2">- Ashwin Varma</p>
                             </div>
                         </motion.div>
@@ -62,7 +62,7 @@ export default function FounderPage() {
                                     Under his leadership, ApexCare360 has grown from a fledgling idea into a trusted partner for over 500 corporates across India. Ashwin combines deep industry knowledge with a passion for operational excellence, ensuring that every health camp and diagnostic drive is executed with military precision.
                                 </p>
                                 <p>
-                                    Ashwin believes in a "prevention-first" philosophy. He advocates for regular health screenings and proactive wellness programs, aiming to reduce the burden of lifestyle diseases in the corporate world.
+                                    Ashwin believes in a &quot;prevention-first&quot; philosophy. He advocates for regular health screenings and proactive wellness programs, aiming to reduce the burden of lifestyle diseases in the corporate world.
                                 </p>
                             </div>
 
@@ -99,7 +99,7 @@ export default function FounderPage() {
                         <Quote className="h-12 w-12 text-primary/20 mx-auto" />
                         <h2 className="text-3xl font-bold text-slate-900">A Message from the Founder</h2>
                         <p className="text-xl text-slate-600 italic leading-relaxed">
-                            "At ApexCare360, we don't just conduct tests; we deliver peace of mind. My goal is to ensure that every organization we touch becomes a healthier, happier, and more productive place. We are committed to transparency, quality, and care in everything we do."
+                            &quot;At ApexCare360, we don&apos;t just conduct tests; we deliver peace of mind. My goal is to ensure that every organization we touch becomes a healthier, happier, and more productive place. We are committed to transparency, quality, and care in everything we do.&quot;
                         </p>
                         <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full" />
                     </div>

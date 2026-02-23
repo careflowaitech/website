@@ -32,12 +32,13 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1]"
+                            className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-slate-900 leading-[1.1]"
                         >
-                            Redefining <br />
+                            India’s Trusted <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-500">
-                                Corporate Wellness
+                                Corporate Preventive
                             </span>
+                            <br />Healthcare Partner
                         </motion.h1>
 
                         <motion.p
@@ -46,25 +47,32 @@ export function Hero() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-lg text-slate-600 md:text-xl leading-relaxed"
                         >
-                            Comprehensive healthcare solutions designed for the modern workforce. From on-site health camps to data-driven wellness programs, we ensure your team thrives.
+                            Structured Employee Health Programs That Reduce Sick Leaves, Improve Productivity & Ensure Compliance.
                         </motion.p>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+                            className="flex flex-col gap-4 w-full sm:w-auto"
                         >
-                            <Button size="lg" className="h-14 px-8 rounded-full text-lg shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 transition-all bg-primary hover:bg-primary/90" asChild>
-                                <Link href="#contact">
-                                    Transform Your Workplace <ArrowRight className="ml-2 h-5 w-5" />
+                            <Button size="lg" className="h-14 px-8 rounded-full text-base shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 transition-all bg-primary hover:bg-primary/90" asChild>
+                                <Link href="/free-audit">
+                                    Book Free Corporate Health Audit <ArrowRight className="ml-2 h-5 w-5" />
                                 </Link>
                             </Button>
-                            <Button size="lg" variant="outline" className="h-14 px-8 rounded-full text-lg border-2 hover:bg-slate-50 text-slate-700" asChild>
-                                <Link href="#services">
-                                    Explore Services
-                                </Link>
-                            </Button>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Button size="lg" variant="outline" className="flex-1 h-14 px-6 rounded-full text-base border-2 hover:bg-slate-50 text-slate-700" asChild>
+                                    <Link href="#contact">
+                                        Download Wellness Proposal
+                                    </Link>
+                                </Button>
+                                <Button size="lg" variant="outline" className="flex-1 h-14 px-6 rounded-full text-base border-2 hover:bg-slate-50 text-slate-700" asChild>
+                                    <Link href="#contact">
+                                        Schedule Call
+                                    </Link>
+                                </Button>
+                            </div>
                         </motion.div>
 
                         <motion.div

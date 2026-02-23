@@ -19,24 +19,34 @@ import { Separator } from "@/components/ui/separator"
 
 const components: { title: string; href: string; description: string }[] = [
     {
-        title: "Corporate Health Camps",
-        href: "/#services",
-        description: "On-site health checkups tailored for your workforce.",
-    },
-    {
-        title: "Employee Wellness",
-        href: "/#solutions",
-        description: "Holistic wellness programs including mental health and fitness.",
-    },
-    {
-        title: "Preventive Checkups",
-        href: "/#services",
-        description: "Annual health screenings to detect potential issues early.",
-    },
-    {
         title: "Health Talks",
-        href: "/#health-talks",
-        description: "Expert-led sessions on nutrition, stress management, and more.",
+        href: "/services/health-talks",
+        description: "Expert-led sessions on physical, mental, and occupational health.",
+    },
+    {
+        title: "Diagnostic Services",
+        href: "/services/diagnostics",
+        description: "ECG, X-Rays, PFT, Vision, Dental, BMI, and other corporate screenings.",
+    },
+    {
+        title: "Corporate Vaccination",
+        href: "/services/vaccination",
+        description: "Year-round drives for Influenza, Hepatitis B, and travel vaccines.",
+    },
+    {
+        title: "Blood Test Packages",
+        href: "/services/packages",
+        description: "Comprehensive testing tailored for factory workers, executives, and leaders.",
+    },
+    {
+        title: "Consultation Services",
+        href: "/consultations",
+        description: "Access to top specialists ranging from general physicians to oncologists.",
+    },
+    {
+        title: "Build Custom Package",
+        href: "/build-package",
+        description: "Use our interactive package builder to request tailored corporate plans.",
     },
 ]
 
