@@ -123,7 +123,7 @@ export function Navbar() {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-600 hover:text-primary focus:bg-transparent hover:bg-transparent")}>
-                                        <Link href="/#contact">
+                                        <Link href="/contact">
                                             Contact
                                         </Link>
                                     </NavigationMenuLink>
@@ -139,7 +139,7 @@ export function Navbar() {
                             <span>+91 88797 47612</span>
                         </div>
                         <Button className="rounded-full bg-primary hover:bg-primary/90 text-white shadow-md hover:shadow-lg transition-all" asChild>
-                            <Link href="#contact">Get Quote</Link>
+                            <Link href="/contact">Get Quote</Link>
                         </Button>
                     </div>
 
@@ -215,7 +215,7 @@ export function Navbar() {
                                                 <ArrowRight className="h-4 w-4 opacity-50" />
                                             </Link>
                                             <Link
-                                                href="/#contact"
+                                                href="/contact"
                                                 onClick={() => setIsOpen(false)}
                                                 className="flex items-center justify-between px-4 py-3 text-base font-medium text-slate-700 rounded-lg hover:bg-slate-50 hover:text-primary transition-colors"
                                             >
@@ -233,7 +233,7 @@ export function Navbar() {
                                             </div>
 
                                             <Button className="w-full h-11 rounded-lg bg-primary hover:bg-primary/90 text-white shadow-md text-base" asChild>
-                                                <Link href="#contact" onClick={() => setIsOpen(false)}>
+                                                <Link href="/contact" onClick={() => setIsOpen(false)}>
                                                     Get Custom Quote
                                                 </Link>
                                             </Button>

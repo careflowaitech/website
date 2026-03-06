@@ -13,7 +13,7 @@ const footerLinks = {
     company: [
         { name: "About Us", href: "/#why-choose" },
         { name: "Founder's Note", href: "/founder" },
-        { name: "Contact", href: "/#contact" },
+        { name: "Contact", href: "/contact" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms of Service", href: "/terms-of-service" },
         { name: "Corporate Benefits", href: "/corporate-benefits" },
