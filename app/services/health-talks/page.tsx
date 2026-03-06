@@ -4,15 +4,20 @@ import { Button } from "@/components/ui/button"
 
 const talks = [
     { title: "Cardiac Health Talk", href: "/services/health-talks/cardiac-health", category: "Physical Health", icon: Heart },
-    { title: "Breast Cancer Awareness", href: "/services/health-talks/breast-cancer", category: "Oncology", icon: Activity },
-    { title: "Oncology Prevention", href: "/services/health-talks/oncology-prevention", category: "Oncology", icon: Stethoscope },
-    { title: "Diabetes Awareness", href: "/services/health-talks/diabetes-awareness", category: "Physical Health", icon: Droplet },
-    { title: "TB Awareness", href: "/services/health-talks/tb-awareness", category: "Physical Health", icon: Activity },
-    { title: "Stress Management", href: "/services/health-talks/stress-management", category: "Mental Health", icon: Brain },
-    { title: "Leadership & Mental Health", href: "/services/health-talks/leadership-mental-health", category: "Mental Health", icon: Users },
-    { title: "Ergonomic (Physiotherapy)", href: "/services/health-talks/ergonomics", category: "Occupational Health", icon: Activity },
+    { title: "Oncology Awareness", href: "/services/health-talks/oncology-prevention", category: "Oncology", icon: Activity },
+    { title: "Mental Health & Stress", href: "/services/health-talks/stress-management", category: "Mental Health", icon: Brain },
+    { title: "Ergonomics & Physiotherapy", href: "/services/health-talks/ergonomics", category: "Occupational Health", icon: Activity },
+    { title: "Cervical Cancer Awareness", href: "/services/health-talks/cervical-cancer", category: "Oncology", icon: Users },
+    { title: "Tuberculosis (TB)", href: "/services/health-talks/tb-awareness", category: "Physical Health", icon: Activity },
+    { title: "Urology Health", href: "/services/health-talks/urology", category: "Physical Health", icon: Stethoscope },
+    { title: "Respiratory Health", href: "/services/health-talks/respiratory", category: "Physical Health", icon: Activity },
+    { title: "Neurology", href: "/services/health-talks/neurology", category: "Physical Health", icon: Brain },
+    { title: "Orthopedic Health", href: "/services/health-talks/orthopedic", category: "Physical Health", icon: Activity },
+    { title: "Gynecology Care", href: "/services/health-talks/gynecology", category: "Physical Health", icon: Heart },
     { title: "Diet & Nutrition", href: "/services/health-talks/diet-nutrition", category: "Wellness", icon: Coffee },
     { title: "Zumba & Yoga", href: "/services/health-talks/zumba-yoga", category: "Fitness", icon: Sun },
+    { title: "Dental Health", href: "/services/health-talks/dental", category: "Physical Health", icon: Activity },
+    { title: "Ophthalmology", href: "/services/health-talks/ophthalmology", category: "Physical Health", icon: Activity },
 ]
 
 export const metadata = {

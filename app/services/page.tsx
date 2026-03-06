@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button"
 const categories = [
     {
         title: "Health Talks",
-        description: "Expert-led sessions on cardiac health, oncology prevention, stress management, and more.",
+        description: "Expert-led sessions on cardiac health, oncology, mental health, ergonomics, and more.",
         icon: Brain,
         href: "/services/health-talks",
         color: "bg-blue-50 text-blue-600",
     },
     {
         title: "Diagnostic Services",
-        description: "Onsite and offsite screenings like ECG, PFT, Mammography, and vision check-ups.",
+        description: "Onsite and offsite screenings like ECG, BCA, BMD, Mammography, and vision check-ups.",
         icon: Activity,
         href: "/services/diagnostics",
         color: "bg-teal-50 text-teal-600",
     },
     {
         title: "Corporate Vaccination",
-        description: "Compliance-ready vaccine drives for Influenza, Hepatitis B, Tetanus, and Travel.",
+        description: "Compliance-ready vaccine drives for Influenza, Hepatitis B, Tetanus, COVID-19 and Travel.",
         icon: ShieldCheck,
         href: "/services/vaccination",
         color: "bg-emerald-50 text-emerald-600",
@@ -40,7 +40,7 @@ const categories = [
     },
     {
         title: "Custom Wellness Programs",
-        description: "Build your own corporate package integrating tests, talks, and vaccinations.",
+        description: "Build your own corporate package integrating tests, talks, fitness (Zumba/Yoga), and vaccinations.",
         icon: Building2,
         href: "/build-package",
         color: "bg-slate-100 text-slate-700",

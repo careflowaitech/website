@@ -1,12 +1,49 @@
-import { ArrowRight, FileCheck2, BarChart3, TrendingDown, Users } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { ArrowRight, FileCheck2, BarChart3, TrendingDown, Users, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export const metadata = {
-    title: "Free Corporate Health Audit | ApexCare360",
-    description: "Book a comprehensive corporate health audit with our medical experts to ensure employee wellness and organizational compliance.",
-}
-
 export default function FreeAuditPage() {
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        setIsSubmitting(true)
+
+        const formElement = e.currentTarget
+        const formData = new FormData(formElement)
+        const data = {
+            fullName: `${formData.get('firstName')} ${formData.get('lastName')}`,
+            companyName: formData.get('companyName') as string,
+            designation: "Corporate Health Audit Lead",
+            phone: (formData.get('phone') as string) || "Not Provided",
+            email: formData.get('email') as string,
+            serviceInterested: "Free Corporate Health Audit",
+            location: "Online/Unspecified",
+        }
+
+        try {
+            const response = await fetch("/api/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            })
+
+            if (!response.ok) {
+                throw new Error("Failed to submit")
+            }
+
+            alert("Your free audit request has been sent successfully! Our team will contact you shortly.")
+            formElement.reset()
+        } catch (error) {
+            console.error(error)
+            alert("Something went wrong. Please try again.")
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
     return (
         <div className="flex flex-col min-h-screen bg-slate-50 pt-16">
             {/* Split layout: Text on Left, Form on Right */}
@@ -70,35 +107,39 @@ export default function FreeAuditPage() {
                             <p className="text-slate-500">Takes 60 seconds. 100% Free & Confidential.</p>
                         </div>
 
-                        <form className="space-y-5">
+                        <form className="space-y-5" onSubmit={handleSubmit}>
                             <div className="grid sm:grid-cols-2 gap-5">
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-slate-700">First Name</label>
-                                    <input type="text" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
+                                    <input type="text" name="firstName" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-slate-700">Last Name</label>
-                                    <input type="text" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
+                                    <input type="text" name="lastName" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-slate-700">Company Name</label>
-                                <input type="text" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
+                                <input type="text" name="companyName" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-slate-700">Official Work Email</label>
-                                <input type="email" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
+                                <input type="email" name="email" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-slate-700">Phone Number (Optional)</label>
-                                <input type="tel" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" />
+                                <label className="text-sm font-bold text-slate-700">Phone Number</label>
+                                <input type="tel" name="phone" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required minLength={10} />
                             </div>
 
-                            <Button type="button" size="lg" className="w-full h-14 rounded-xl shadow-xl hover:shadow-2xl transition-all bg-primary hover:bg-primary/90 text-white font-bold text-lg mt-4">
-                                Claim Free Audit <ArrowRight className="ml-2 h-5 w-5" />
+                            <Button type="submit" size="lg" disabled={isSubmitting} className="w-full h-14 rounded-xl shadow-xl hover:shadow-2xl transition-all bg-primary hover:bg-primary/90 text-white font-bold text-lg mt-4">
+                                {isSubmitting ? (
+                                    <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Submitting...</>
+                                ) : (
+                                    <>Claim Free Audit <ArrowRight className="ml-2 h-5 w-5" /></>
+                                )}
                             </Button>
 
                             <p className="text-xs text-center text-slate-400 mt-6">

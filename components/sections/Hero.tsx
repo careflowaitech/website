@@ -32,13 +32,13 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-slate-900 leading-[1.1]"
+                            className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.2] lg:leading-[1.1]"
                         >
-                            India’s Trusted <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-500">
+                            India’s Trusted{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-500 block sm:inline">
                                 Corporate Preventive
-                            </span>
-                            <br />Healthcare Partner
+                            </span>{" "}
+                            Healthcare Partner
                         </motion.h1>
 
                         <motion.p
@@ -56,18 +56,13 @@ export function Hero() {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="flex flex-col gap-4 w-full sm:w-auto"
                         >
-                            <Button size="lg" className="h-14 px-8 rounded-full text-base shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 transition-all bg-primary hover:bg-primary/90" asChild>
+                            <Button size="lg" className="w-full sm:w-auto h-14 px-8 rounded-full text-base shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 transition-all bg-primary hover:bg-primary/90" asChild>
                                 <Link href="/free-audit">
                                     Book Free Corporate Health Audit <ArrowRight className="ml-2 h-5 w-5" />
                                 </Link>
                             </Button>
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <Button size="lg" variant="outline" className="flex-1 h-14 px-6 rounded-full text-base border-2 hover:bg-slate-50 text-slate-700" asChild>
-                                    <Link href="#contact">
-                                        Download Wellness Proposal
-                                    </Link>
-                                </Button>
-                                <Button size="lg" variant="outline" className="flex-1 h-14 px-6 rounded-full text-base border-2 hover:bg-slate-50 text-slate-700" asChild>
+                            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                                <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 rounded-full text-base border-2 hover:bg-slate-50 text-slate-700" asChild>
                                     <Link href="#contact">
                                         Schedule Call
                                     </Link>

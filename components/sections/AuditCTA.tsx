@@ -1,67 +1,151 @@
-import Link from "next/link"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { ArrowRight, FileCheck2, BarChart3, TrendingDown, Users, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function AuditCTA() {
-    return (
-        <section className="py-24 bg-primary text-white relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10 mix-blend-overlay"></div>
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
-            <div className="container relative z-10 px-4 md:px-6">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-8">
-                        <div className="space-y-4">
-                            <h2 className="text-3xl md:text-5xl font-heading font-extrabold tracking-tight">
-                                Get Your Free Corporate Health Audit
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        setIsSubmitting(true)
+
+        const formElement = e.currentTarget
+        const formData = new FormData(formElement)
+        const data = {
+            fullName: `${formData.get('firstName')} ${formData.get('lastName')}`,
+            companyName: formData.get('companyName') as string,
+            designation: "Corporate Health Audit Lead",
+            phone: (formData.get('phone') as string) || "Not Provided",
+            email: formData.get('email') as string,
+            serviceInterested: "Free Corporate Health Audit",
+            location: "Online/Unspecified",
+        }
+
+        try {
+            const response = await fetch("/api/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            })
+
+            if (!response.ok) {
+                throw new Error("Failed to submit")
+            }
+
+            alert("Your free audit request has been sent successfully! Our team will contact you shortly.")
+            formElement.reset()
+        } catch (error) {
+            console.error(error)
+            alert("Something went wrong. Please try again.")
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
+    return (
+        <section className="bg-slate-50 relative overflow-hidden">
+            <div className="container px-4 md:px-6 py-16 lg:py-24">
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                    {/* Left Column: Value Proposition */}
+                    <div className="space-y-12">
+                        <div className="space-y-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                                <FileCheck2 className="h-4 w-4" />
+                                <span>Free Limited Time Offer</span>
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-heading font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                                Stop Guessing About Your <span className="text-primary">Workforce Health.</span>
                             </h2>
-                            <p className="text-lg text-primary-foreground/90 max-w-xl leading-relaxed">
-                                Ready to optimize your employee wellness program? Let our medical experts evaluate your current setup and provide a free roadmap to reduce absenteeism and lower insurance premiums.
+                            <p className="text-xl text-slate-600 leading-relaxed">
+                                Our medical experts will conduct a thorough risk analysis of your current health policies, identify compliance gaps, and provide a measurable roadmap for optimization.
                             </p>
                         </div>
 
-                        <ul className="space-y-4">
-                            {[
-                                "Comprehensive Employee Health Policy Review",
-                                "Workforce Risk Analysis & Profiling",
-                                "Tailored Diagnostic & Screening Package Suggestions",
-                                "Corporate Healthcare Cost Optimization",
-                                "Annual Preventive Wellness Roadmap"
-                            ].map((item, i) => (
-                                <li key={i} className="flex items-start gap-3">
-                                    <CheckCircle2 className="h-6 w-6 text-teal-400 shrink-0" />
-                                    <span className="text-lg font-medium">{item}</span>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="space-y-6">
+                            <h3 className="text-2xl font-bold font-heading text-slate-900 border-b pb-2">What You Get in the Audit</h3>
+
+                            <div className="space-y-6">
+                                <div className="flex gap-4">
+                                    <div className="bg-teal-50 text-teal-600 p-3 rounded-xl shrink-0 h-fit">
+                                        <BarChart3 className="h-6 w-6" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-slate-900 text-lg">Workforce Risk Analysis</h4>
+                                        <p className="text-slate-600">Demographic breakdown mapping out potential chronic diseases based on industry hazards.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="bg-rose-50 text-rose-600 p-3 rounded-xl shrink-0 h-fit">
+                                        <TrendingDown className="h-6 w-6" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-slate-900 text-lg">Cost Optimization Review</h4>
+                                        <p className="text-slate-600">Assessment of current healthcare spending and ways to lower corporate insurance premiums.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="bg-indigo-50 text-indigo-600 p-3 rounded-xl shrink-0 h-fit">
+                                        <Users className="h-6 w-6" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-slate-900 text-lg">Annual Wellness Roadmap</h4>
+                                        <p className="text-slate-600">A structured 12-month calendar of tests, camps, and talks mapped to medical guidelines.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="bg-white p-8 md:p-10 rounded-2xl shadow-2xl text-slate-900 mx-auto w-full max-w-md">
-                        <div className="text-center mb-8">
-                            <h3 className="text-2xl font-bold font-heading mb-2">Book Free Audit</h3>
-                            <p className="text-slate-500 text-sm">Fill details for a complete health risk analysis.</p>
+                    {/* Right Column: Lead Form */}
+                    <div className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border border-slate-100 lg:-mt-8 sticky top-24">
+                        <div className="text-center mb-8 space-y-2">
+                            <h3 className="text-3xl font-bold font-heading text-slate-900">Book Your Audit</h3>
+                            <p className="text-slate-500">Takes 60 seconds. 100% Free & Confidential.</p>
                         </div>
-                        <form className="space-y-4">
-                            <div className="space-y-2">
-                                <label className="text-sm font-semibold">Your Name</label>
-                                <input type="text" className="w-full h-12 rounded-lg border border-slate-200 px-4 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="John Doe" />
+
+                        <form className="space-y-5" onSubmit={handleSubmit}>
+                            <div className="grid sm:grid-cols-2 gap-5">
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-slate-700">First Name</label>
+                                    <input type="text" name="firstName" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-slate-700">Last Name</label>
+                                    <input type="text" name="lastName" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
+                                </div>
                             </div>
+
                             <div className="space-y-2">
-                                <label className="text-sm font-semibold">Company Name</label>
-                                <input type="text" className="w-full h-12 rounded-lg border border-slate-200 px-4 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Acme Corp" />
+                                <label className="text-sm font-bold text-slate-700">Company Name</label>
+                                <input type="text" name="companyName" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
                             </div>
+
                             <div className="space-y-2">
-                                <label className="text-sm font-semibold">Work Email</label>
-                                <input type="email" className="w-full h-12 rounded-lg border border-slate-200 px-4 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="john@acmecorp.com" />
+                                <label className="text-sm font-bold text-slate-700">Official Work Email</label>
+                                <input type="email" name="email" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required />
                             </div>
-                            <Button type="button" size="lg" className="w-full h-14 rounded-lg text-base font-semibold shadow-xl hover:shadow-2xl transition-all">
-                                Request Free Health Audit <ArrowRight className="ml-2 h-5 w-5" />
+
+                            <div className="space-y-2">
+                                <label className="text-sm font-bold text-slate-700">Phone Number</label>
+                                <input type="tel" name="phone" className="w-full h-12 rounded-xl border border-slate-200 px-4 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none transition-all" required minLength={10} />
+                            </div>
+
+                            <Button type="submit" size="lg" disabled={isSubmitting} className="w-full h-14 rounded-xl shadow-xl hover:shadow-2xl transition-all bg-primary hover:bg-primary/90 text-white font-bold text-lg mt-4">
+                                {isSubmitting ? (
+                                    <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Submitting...</>
+                                ) : (
+                                    <>Claim Free Audit <ArrowRight className="ml-2 h-5 w-5" /></>
+                                )}
                             </Button>
-                            <p className="text-xs text-center text-slate-400 mt-4">We respect your privacy. No spam.</p>
+
+                            <p className="text-xs text-center text-slate-400 mt-6">
+                                By proceeding, you agree to our privacy policy and terms of service.
+                            </p>
                         </form>
                     </div>
+
                 </div>
             </div>
         </section>

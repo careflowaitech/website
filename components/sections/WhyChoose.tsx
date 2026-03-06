@@ -12,8 +12,8 @@ const features = [
         gradient: "from-blue-500 to-cyan-500",
     },
     {
-        title: "Best Commercials",
-        description: "We negotiate the best diagnostic rates for our corporate partners.",
+        title: "Reduced Healthcare Costs",
+        description: "Our preventive screenings detect risks early, saving significant health insurance and medical expenses.",
         icon: Calculator,
         gradient: "from-green-500 to-emerald-500",
     },
@@ -30,8 +30,8 @@ const features = [
         gradient: "from-orange-500 to-red-500",
     },
     {
-        title: "Trusted Partner",
-        description: "Trusted by leading corporates for reliability and quality service.",
+        title: "Higher Productivity",
+        description: "Healthy employees take fewer sick days, boosting output and improving long-term retention.",
         icon: Users,
         gradient: "from-indigo-500 to-blue-500",
     },
@@ -45,7 +45,7 @@ const features = [
 
 export function WhyChoose() {
     return (
-        <section id="why-choose" className="py-24 bg-white relative">
+        <section id="why-choose" className="py-16 lg:py-24 bg-white relative">
             <div className="container px-4 md:px-6">
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">

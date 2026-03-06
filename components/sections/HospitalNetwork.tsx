@@ -5,9 +5,9 @@ import { motion } from "framer-motion"
 export function HospitalNetwork() {
     // Array of mock hospital network placeholders (since logos would need uploading)
     const partners = [
-        "Network Partner 1", "Diagnostic Lab 2", "Insurance Corp A",
-        "Hospital Alliance B", "Diagnostic Center X", "Health Insure Y",
-        "Global Care Hospitals", "Apex Diagnostics", "Trust Insurance"
+        "Kokilaben Dhirubhai Ambani", "Nanavati Max", "Jaslok Hospital",
+        "P. D. Hinduja", "Sir H. N. Reliance", "Saifee Hospital",
+        "Lilavati Hospital", "Hiranandani Hospital", "Breach Candy"
     ]
 
     return (

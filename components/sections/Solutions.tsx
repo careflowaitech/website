@@ -29,7 +29,7 @@ const solutions = [
 
 export function Solutions() {
     return (
-        <section id="solutions" className="py-24 bg-slate-50">
+        <section id="solutions" className="py-16 lg:py-24 bg-slate-50">
             <div className="container px-4 md:px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
@@ -76,6 +76,14 @@ export function Solutions() {
                             </Card>
                         </motion.div>
                     ))}
+                </div>
+
+                <div className="mt-12 text-center">
+                    <Button asChild size="lg" className="h-12 px-8 rounded-full shadow-lg hover:shadow-xl transition-all font-semibold bg-white text-slate-800 border border-slate-200 hover:bg-slate-50">
+                        <Link href="/services">
+                            Explore All Corporate Solutions <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </section>

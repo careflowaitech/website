@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
     // Email to Admin
     await resend.emails.send({
-      from: "ApexCare360 <onboarding@apexcare360.com>", // Update with verified domain if available
+      from: "ApexCare360 <onboarding@notification.apexcare360.com>", // Update with verified domain if available
       to: adminEmail,
       subject: `New Lead: ${companyName} - ${serviceInterested}`,
       html: `
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     // Auto-reply to User
     await resend.emails.send({
-      from: "ApexCare360 <onboarding@apexcare360.com>",
+      from: "ApexCare360 <onboarding@notification.apexcare360.com>",
       to: email,
       subject: "We received your request - ApexCare360",
       html: `

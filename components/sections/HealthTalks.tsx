@@ -1,23 +1,32 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { Activity, Brain, Heart, Smile, Stethoscope, Trophy, Users, Utensils } from "lucide-react"
+import { Activity, Brain, Heart, Smile, Stethoscope, ArrowRight, Users, Utensils } from "lucide-react"
+import Link from "next/link"
 
 const talks = [
     { title: "Cardiology & Heart Health", icon: Heart, color: "bg-red-100 text-red-700" },
-    { title: "Preventive Oncology", icon: Activity, color: "bg-purple-100 text-purple-700" },
-    { title: "Mental Health Awareness", icon: Brain, color: "bg-blue-100 text-blue-700" },
-    { title: "Work Stress Management", icon: Smile, color: "bg-teal-100 text-teal-700" },
-    { title: "Leadership & Well-being", icon: Trophy, color: "bg-yellow-100 text-yellow-700" },
-    { title: "Nutrition & Diet", icon: Utensils, color: "bg-green-100 text-green-700" },
-    { title: "Diabetes Management", icon: Stethoscope, color: "bg-orange-100 text-orange-700" },
-    { title: "Women's Health", icon: Users, color: "bg-pink-100 text-pink-700" },
+    { title: "Oncology Awareness", icon: Activity, color: "bg-purple-100 text-purple-700" },
+    { title: "Mental Health & Stress", icon: Brain, color: "bg-blue-100 text-blue-700" },
+    { title: "Ergonomics & Physiotherapy", icon: Smile, color: "bg-teal-100 text-teal-700" },
+    { title: "Cervical Cancer Awareness", icon: Users, color: "bg-pink-100 text-pink-700" },
+    { title: "Tuberculosis (TB)", icon: Activity, color: "bg-orange-100 text-orange-700" },
+    { title: "Urology Health", icon: Stethoscope, color: "bg-indigo-100 text-indigo-700" },
+    { title: "Respiratory Health", icon: Activity, color: "bg-sky-100 text-sky-700" },
+    { title: "Neurology", icon: Brain, color: "bg-violet-100 text-violet-700" },
+    { title: "Orthopedic Health", icon: Activity, color: "bg-stone-100 text-stone-700" },
+    { title: "Gynecology Care", icon: Heart, color: "bg-rose-100 text-rose-700" },
+    { title: "Diet & Nutrition", icon: Utensils, color: "bg-green-100 text-green-700" },
+    { title: "Zumba & Yoga", icon: Smile, color: "bg-yellow-100 text-yellow-700" },
+    { title: "Dental Health", icon: Activity, color: "bg-zinc-100 text-zinc-700" },
+    { title: "Ophthalmology", icon: Activity, color: "bg-cyan-100 text-cyan-700" },
 ]
 
 export function HealthTalks() {
     return (
-        <section id="health-talks" className="py-24 bg-white relative overflow-hidden">
+        <section id="health-talks" className="py-16 lg:py-24 bg-white relative overflow-hidden">
             {/* Decorative blobs */}
             <div className="absolute -left-20 top-40 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
             <div className="absolute -right-20 bottom-20 w-64 h-64 bg-secondary/5 rounded-full blur-3xl" />
@@ -51,6 +60,14 @@ export function HealthTalks() {
                             </div>
                         </motion.div>
                     ))}
+                </div>
+
+                <div className="mt-12 text-center">
+                    <Button asChild size="lg" className="h-12 px-8 rounded-full shadow-lg hover:shadow-xl transition-all font-semibold">
+                        <Link href="/services/health-talks">
+                            Explore All Health Talks <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </section>

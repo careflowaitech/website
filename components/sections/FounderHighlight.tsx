@@ -16,9 +16,13 @@ export function FounderHighlight() {
 
                         <div className="relative bg-white p-2 rounded-2xl shadow-xl">
                             <div className="aspect-[4/5] bg-slate-200 rounded-xl overflow-hidden relative flex items-center justify-center">
-                                {/* Placeholder for Founder Image */}
-                                <User className="h-32 w-32 text-slate-400" />
-                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-6 text-white text-center">
+                                <Image
+                                    src="/founder.jpeg"
+                                    alt="Ashwin Varma - Founder of ApexCare360"
+                                    fill
+                                    className="object-cover"
+                                />
+                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white text-center">
                                     <h4 className="font-bold text-xl">Ashwin Varma</h4>
                                     <p className="text-sm opacity-90">Founder, ApexCare360</p>
                                 </div>

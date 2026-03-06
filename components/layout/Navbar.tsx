@@ -72,17 +72,17 @@ export function Navbar() {
             )}
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex h-24 items-center justify-between">
+                <div className="flex h-16 md:h-24 items-center justify-between">
 
                     {/* Logo */}
-                    <div className="flex-shrink-0 mr-8">
+                    <div className="flex-shrink-0 mr-4 md:mr-8">
                         <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
                             <img
                                 src="/logo.png"
                                 alt="ApexCare360 Logo"
                                 width={320}
                                 height={90}
-                                className="h-28 w-auto object-contain"
+                                className="h-12 md:h-20 lg:h-28 w-auto object-contain"
                             />
                         </Link>
                     </div>
@@ -171,23 +171,33 @@ export function Navbar() {
                                     </SheetHeader>
 
                                     <div className="flex-1 overflow-y-auto py-6 px-4">
-                                        <nav className="flex flex-col space-y-1">
+                                        <nav className="flex flex-col space-y-1 bg-white">
+                                            <div className="px-4 py-2 font-semibold text-slate-800 border-b border-slate-100">
+                                                Our Services
+                                            </div>
+                                            {components.map((component) => (
+                                                <Link
+                                                    key={component.title}
+                                                    href={component.href}
+                                                    onClick={() => setIsOpen(false)}
+                                                    className="flex flex-col px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-slate-50 hover:text-primary transition-colors ml-2 border-l-2 border-transparent hover:border-primary"
+                                                >
+                                                    <span>{component.title}</span>
+                                                    <span className="text-xs text-slate-400 font-normal line-clamp-1 mt-0.5">{component.description}</span>
+                                                </Link>
+                                            ))}
+
+                                            <Separator className="my-2" />
+
                                             <Link
-                                                href="/#services"
+                                                href="/free-audit"
                                                 onClick={() => setIsOpen(false)}
-                                                className="flex items-center justify-between px-4 py-3 text-base font-medium text-slate-700 rounded-lg hover:bg-slate-50 hover:text-primary transition-colors"
+                                                className="flex items-center justify-between px-4 py-3 text-base font-bold text-primary bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors mt-2"
                                             >
-                                                Services
-                                                <ArrowRight className="h-4 w-4 opacity-50" />
+                                                Free Health Audit
+                                                <ArrowRight className="h-4 w-4" />
                                             </Link>
-                                            <Link
-                                                href="/#solutions"
-                                                onClick={() => setIsOpen(false)}
-                                                className="flex items-center justify-between px-4 py-3 text-base font-medium text-slate-700 rounded-lg hover:bg-slate-50 hover:text-primary transition-colors"
-                                            >
-                                                Solutions
-                                                <ArrowRight className="h-4 w-4 opacity-50" />
-                                            </Link>
+
                                             <Link
                                                 href="/#why-choose"
                                                 onClick={() => setIsOpen(false)}
